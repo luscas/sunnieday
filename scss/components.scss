@@ -1,0 +1,119 @@
+@import '_variables';
+
+.btn {
+	background: $orange-600;
+	font-family: $font-family;
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+	padding: 14px 24px 16px;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 4px rgba(#000, .16);
+	transition: all 150ms ease-in-out;
+	&:hover {
+		background: $orange;
+	}
+	&-lg {
+		padding: 19px 64px 24px;
+	}
+	&:disabled {
+		background: $gray-400;
+		color: $gray-800;
+		box-shadow: none;
+	}
+	&-info {
+		background: $blue;
+		color: #fff;
+		&:hover {
+			background: $blue-600;
+		}
+	}
+	&-success {
+		background: $green;
+		color: #fff;
+		&:hover {
+			background: $green-600;
+		}
+	}
+}
+
+.form-control {
+	position: relative;
+	&__error {
+		font-size: 14px;
+		letter-spacing: -0.016em;
+		padding-top: 12px;
+		color: red;
+	}
+  .eye {
+    background-image: url(/images/eye.svg);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    cursor: pointer;
+    display: none;
+    &-off {
+      background-image: url(/images/eye-off.svg);
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.form-control > input {
+	background-color: $gray;
+	font-family: $font-family;
+	font-weight: 500;
+	border-radius: 4px;
+  width: 100%;
+	outline: none;
+	padding: 20px;
+	border: 2px solid transparent;
+	font-size: 20px;
+	display: block;
+	letter-spacing: -0.008em;
+}
+.form-control > input:hover {
+	background-color: $gray-dark;
+}
+.form-control > label {
+	font-size: 18px;
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	z-index: 1;
+	pointer-events: none;
+	letter-spacing: -0.016em;
+}
+.form-control > input,
+.form-control > label {
+	transition: all 150ms ease;
+}
+
+.form-control > input[aria-invalid] {
+	border-color: $red!important;
+	color: red;
+}
+
+.form-control > input[aria-invalid],
+.form-control > input:focus,
+.form-control > input:valid {
+	background: #fff;
+	border-color: black;
+	padding: 24px 20px 16px 20px;
+}
+
+.form-control > input[aria-invalid] ~ label,
+.form-control > input:focus ~ label,
+.form-control > input:valid ~ label {
+	font-size: 14px;
+	top: 8px;
+	left: 20px;
+}
+.form-control > input[aria-invalid] ~ .eye,
+.form-control > input:focus ~ .eye,
+.form-control > input:valid ~ .eye {
+  display: block;
+}
