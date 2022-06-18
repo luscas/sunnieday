@@ -1,11 +1,5 @@
 console.log(`[${new Date().toDateString()}] Welcome to Sunnieday!`);
 
-const form = document.querySelector(".auth form");
-
-form.addEventListener("submit", (e) => {
-  console.log(e);
-});
-
 document.querySelectorAll(".eye").forEach((el) => {
   el.addEventListener("click", (e) => {
     const input = el.parentElement.querySelector("input");
@@ -19,8 +13,6 @@ document.querySelectorAll(".eye").forEach((el) => {
       el.classList.add("eye-off");
       input.setAttribute("type", "text");
     }
-
-    console.log(input.value);
   });
 });
 
@@ -30,12 +22,18 @@ document.querySelectorAll("[data-title]").forEach((el) => {
   });
 });
 
-// comment out theses lines if you didn't want the rotation animation on sunlight header
-let initialAngle = 0;
-setInterval(function () {
-  initialAngle += 0.15;
-
-  document
-    .querySelector(":root")
-    .style.setProperty("--rotate-sunlight", `${initialAngle}deg`);
+document.querySelector(".navbar__menu").addEventListener("click", (e) => {
+  document.querySelector(".navbar").classList.toggle("navbar__sub--active");
 });
+
+document
+  .querySelector(".cookie .btn-accept, .cookie .btn-reject")
+  .addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector(".cookie").classList.add("hide");
+    localStorage.setItem("cookie", "ok");
+  });
+
+if (localStorage.getItem("cookie") == "ok") {
+  document.querySelector(".cookie").style.display = "none";
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunnieday</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="register" data-step="1">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar__left">
+        <div class="navbar__menu">
+          <span></span>
+        </div>
+
+        <img class="navbar__search" src="/images/search.svg" alt="Search">
+      </div>
+
+      <a href="/" class="navbar__brand">
+        <img src="/images/logo.svg" alt="Sunnieday" draggable="false">
+      </a>
+
+      <div class="navbar__right">
+        <button class="btn btn-info" disabled>Registreer nu</button>
+        <a href="/">
+          <button class="btn btn-success">Log In</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="navbar-sub">
+      <div class="container">
+        <div class="navbar-sub__group">
+          <div class="navbar-sub__group--label">section</div>
+            <div class="navbar-sub__group--items">
+              <a href="#" class="navbar-sub__item">Item 1</a>
+              <a href="#" class="navbar-sub__item">Item 2</a>
+              <a href="#" class="navbar-sub__item">Item 3</a>
+          </div>
+        </div>
+
+        <div class="navbar-sub__group">
+          <div class="navbar-sub__group--label">section</div>
+            <div class="navbar-sub__group--items">
+              <a href="#" class="navbar-sub__item">Item 1</a>
+              <a href="#" class="navbar-sub__item">Item 2</a>
+              <a href="#" class="navbar-sub__item">Item 3</a>
+          </div>
+        </div>
+
+        <div class="navbar-sub__group">
+          <div class="navbar-sub__group--label">section</div>
+            <div class="navbar-sub__group--items">
+              <a href="#" class="navbar-sub__item">Item 1</a>
+              <a href="#" class="navbar-sub__item">Item 2</a>
+              <a href="#" class="navbar-sub__item">Item 3</a>
+          </div>
+        </div>
+
+        <div class="navbar-sub__group buttons">
+          <button class="btn btn-info" disabled>Registreer nu</button>
+          <a href="/">
+            <button class="btn btn-success">Log In</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <form id="register__form" novalidate>
+      <section class="register__tab" id="register" data-tabindex="1">
+        <div class="container">
+          <div class="register__left">
+            <div class="register__tabs">
+              <div class="register__tabs--label">STEP <b class="register__tabs--index">1</b> OF <b class="register__tabs--size">3</b></div>
+              <div class="register__tabs--items">
+                <div class="register__tabs--items__tab active"></div>
+                <div class="register__tabs--items__tab"></div>
+                <div class="register__tabs--items__tab"></div>
+              </div>
+            </div>
+
+            <h1 class="register__title">Create a new account</h1>
+
+            <img class="register__frank" src="/images/frank.png" alt="Frank">
+          </div>
+
+          <div class="card">
+            <div class="card__title">Qual é o seu e-mail?</div>
+
+              <div class="form-control">
+                <input name="email" type="text" required="required" />
+                <label>E-mail</label>
+              </div>
+
+              <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  <span>Receive news, special offers, feedback surveys and game test invites from Sunnieday Games</span>
+                </label>
+              </div>
+
+              <div class="socials">
+                <button type="button" class="btn btn-facebook">
+                  <img src="/images/facebook.svg" alt="Facebook">
+                </button>
+
+                <button type="button" class="btn btn-google">
+                  <img src="/images/google.svg" alt="Google">
+                </button>
+
+                <button type="button" class="btn btn-plus">
+                  <img src="/images/plus.svg" alt="Plus">
+                </button>
+              </div>
+
+              <button type="button" class="btn btn-lg" onClick="nextStep()" disabled>Next</button>
+
+              <div class="forgot-or-registration">
+                <a href="#">Wachtwoord vergeten?</a><br>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="register__tab" id="register" data-tabindex="2">
+        <div class="container">
+          <div class="register__left">
+            <div class="register__tabs">
+              <div class="register__tabs--label">STEP <b class="register__tabs--index">2</b> OF <b class="register__tabs--size">3</b></div>
+              <div class="register__tabs--items">
+                <div class="register__tabs--items__tab completed"></div>
+                <div class="register__tabs--items__tab active"></div>
+                <div class="register__tabs--items__tab"></div>
+              </div>
+            </div>
+
+            <h1 class="register__title">We're almost there...</h1>
+
+            <div class="avatar">
+              <div class="avatar__name">Username</div>
+              <img src="/images/avatar_base.svg" alt="Avatar Base">
+            </div>
+          </div>
+
+          <div class="card animate__animated">
+            <div class="card__title">Seus dados</div>
+            <div class="form-control">
+              <input data-field="username" name="username" type="text" required="required" />
+              <label>Username</label>
+            </div>
+
+            <div class="form-group">
+              <div class="form-control birthday">
+                <input data-field="birthday" data-mask="00" name="day" type="text" required="required" />
+                <label>Day</label>
+              </div>
+
+              <div class="form-control select birthday">
+                <select data-field="birthday" name="month" required>
+                  <option value="" selected disabled></option>
+                  <option value="01">Januari</option>
+                  <option value="02">Februari</option>
+                  <option value="03">Maart</option>
+                  <option value="04">april</option>
+                  <option value="05">Kunnen</option>
+                  <option value="06">juni-</option>
+                  <option value="07">juli-</option>
+                  <option value="08">augustus</option>
+                  <option value="09">september</option>
+                  <option value="10">oktober</option>
+                  <option value="11">november</option>
+                  <option value="12">December</option>
+                </select>
+                <label>Month</label>
+              </div>
+
+              <div class="form-control select birthday">
+                <select data-field="birthday" name="year" required>
+                  <option value="" selected disabled></option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2011">2011</option>
+                  <option value="2010">2010</option>
+                  <option value="2009">2009</option>
+                  <option value="2008">2008</option>
+                  <option value="2007">2007</option>
+                  <option value="2006">2006</option>
+                  <option value="2005">2005</option>
+                  <option value="2004">2004</option>
+                  <option value="2003">2003</option>
+                  <option value="2002">2002</option>
+                  <option value="2001">2001</option>
+                  <option value="2000">2000</option>
+                  <option value="1999">1999</option>
+                  <option value="1998">1998</option>
+                  <option value="1997">1997</option>
+                  <option value="1996">1996</option>
+                  <option value="1995">1995</option>
+                  <option value="1994">1994</option>
+                  <option value="1993">1993</option>
+                  <option value="1992">1992</option>
+                  <option value="1991">1991</option>
+                  <option value="1990">1990</option>
+                  <option value="1989">1989</option>
+                  <option value="1988">1988</option>
+                  <option value="1987">1987</option>
+                  <option value="1986">1986</option>
+                  <option value="1985">1985</option>
+                  <option value="1984">1984</option>
+                  <option value="1983">1983</option>
+                  <option value="1982">1982</option>
+                  <option value="1981">1981</option>
+                  <option value="1980">1980</option>
+                  <option value="1979">1979</option>
+                  <option value="1978">1978</option>
+                  <option value="1977">1977</option>
+                  <option value="1976">1976</option>
+                  <option value="1975">1975</option>
+                  <option value="1974">1974</option>
+                  <option value="1973">1973</option>
+                  <option value="1972">1972</option>
+                  <option value="1971">1971</option>
+                  <option value="1970">1970</option>
+                  <option value="1969">1969</option>
+                  <option value="1968">1968</option>
+                  <option value="1967">1967</option>
+                  <option value="1966">1966</option>
+                  <option value="1965">1965</option>
+                  <option value="1964">1964</option>
+                  <option value="1963">1963</option>
+                  <option value="1962">1962</option>
+                  <option value="1961">1961</option>
+                  <option value="1960">1960</option>
+                  <option value="1959">1959</option>
+                  <option value="1958">1958</option>
+                  <option value="1957">1957</option>
+                  <option value="1956">1956</option>
+                  <option value="1955">1955</option>
+                  <option value="1954">1954</option>
+                  <option value="1953">1953</option>
+                  <option value="1952">1952</option>
+                  <option value="1951">1951</option>
+                  <option value="1950">1950</option>
+                  <option value="1949">1949</option>
+                  <option value="1948">1948</option>
+                  <option value="1947">1947</option>
+                  <option value="1946">1946</option>
+                  <option value="1945">1945</option>
+                  <option value="1944">1944</option>
+                  <option value="1943">1943</option>
+                  <option value="1942">1942</option>
+                  <option value="1941">1941</option>
+                  <option value="1940">1940</option>
+                  <option value="1939">1939</option>
+                  <option value="1938">1938</option>
+                  <option value="1937">1937</option>
+                  <option value="1936">1936</option>
+                  <option value="1935">1935</option>
+                  <option value="1934">1934</option>
+                  <option value="1933">1933</option>
+                  <option value="1932">1932</option>
+                  <option value="1931">1931</option>
+                  <option value="1930">1930</option>
+                  <option value="1929">1929</option>
+                  <option value="1928">1928</option>
+                  <option value="1927">1927</option>
+                  <option value="1926">1926</option>
+                  <option value="1925">1925</option>
+                  <option value="1924">1924</option>
+                  <option value="1923">1923</option>
+                  <option value="1922">1922</option>
+                  <option value="1921">1921</option>
+                  <option value="1920">1920</option>
+                </select>
+                <label>Year</label>
+              </div>
+            </div>
+
+            <div class="genders">
+              <div class="gender male">
+                <input data-field="gender" type="radio" name="gender" value="male" required>
+                <div class="gender__content">
+                  <img src="/images/icons8-male.svg" alt="Gender Male">
+                  <span>Male</span>
+                </div>
+              </div>
+
+              <div class="gender female">
+                <input data-field="gender" type="radio" name="gender" value="female" required>
+                <div class="gender__content">
+                  <img src="/images/icons8-female.svg" alt="Gender Male">
+                  <span>Female</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigation__options">
+              <a href="javascript:prevStep()">Back</a>
+              <button type="button" class="btn btn-lg" onClick="nextStep()" disabled>Next</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="register__tab" id="register" data-tabindex="3">
+        <div class="container">
+          <div class="register__left">
+            <div class="register__tabs">
+              <div class="register__tabs--label">STEP <b class="register__tabs--index">3</b> OF <b class="register__tabs--size">3</b></div>
+              <div class="register__tabs--items">
+                <div class="register__tabs--items__tab completed"></div>
+                <div class="register__tabs--items__tab completed"></div>
+                <div class="register__tabs--items__tab active"></div>
+              </div>
+            </div>
+
+            <h1 class="register__title">Choose a avatar style</h1>
+            <div class="register__label">We have a few suggestions for you:</div>
+
+            <div class="avatars">
+              <div class="avatar selected">
+                <img draggable="false" src="https://www.habbo.com/habbo-imaging/avatarimage?user=Figure&direction=2&head_direction=3&action=&gesture=nrm&size=l" alt="Figure">
+              </div>
+
+              <div class="avatar">
+                <img draggable="false" src="https://www.habbo.com.tr/habbo-imaging/avatarimage?user=Figure&direction=2&head_direction=3&action=&gesture=nrm&size=l" alt="Figure">
+              </div>
+
+              <div class="avatar">
+                <img draggable="false" src="https://www.habbo.es/habbo-imaging/avatarimage?user=Figure&direction=2&head_direction=3&action=&gesture=nrm&size=l" alt="Figure">
+              </div>
+
+              <div class="avatar">
+                <img draggable="false" src="https://www.habbo.nl/habbo-imaging/avatarimage?user=Figure&direction=2&head_direction=3&action=&gesture=nrm&size=l" alt="Figure">
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Set your password</div>
+
+              <div class="form-control">
+                <input name="password" type="password" required="required" data-field="password" />
+                <label>Wachtwoord</label>
+              </div>
+
+              <div class="form-control">
+                <input name="password_confirmation" type="password" required="required" data-field="password_confirmation" />
+                <label>Confirm your wachtwoord</label>
+              </div>
+
+              <div class="h-captcha animate__animated" data-sitekey="3686012a-9ee1-4912-b0bd-1ded01dae201" data-theme="light" data-error-callback="onError"></div>
+
+              <button type="submit" class="btn btn-success btn-lg" disabled>
+                <img src="/images/chevron-right.svg" alt="Continue to login">
+              </button>
+
+              <a class="register__back" href="javascript:prevStep()">Back</a>
+            </div>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <div class="cookie">
+    <div class="container">
+      <img src="/images/info.svg" alt="Information">
+      <div class="cookie__content">
+        Utilizamos cookies opcionais para melhorar a sua experiência nos nossos web sites, como através de ligações em redes sociais, e para mostrar publicidade personalizada na sua atividade online. Se rejeitar os cookies opcionais, só serão utilizados os cookies necessários para lhe fornecer os serviços. Poderá alterar a sua seleção ao clicar em 'Gerir Cookies' na parte inferior da página. <a href="#">Declaração de Privacidade</a>  |  <a href="#">Cookies de Terceiros</a>
+      </div>
+
+      <div class="cookie__buttons">
+        <button class="btn btn-accept">
+          <img src="/images/check.svg" alt="Check">
+          Aceitar
+        </button>
+        <button class="btn btn-reject"><img src="/images/dismiss.svg" alt="Dismiss"> Rejeitar</button>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="https://unpkg.com/imask"></script>
+  <script src="https://js.hcaptcha.com/1/api.js?hl=nl" async defer></script>
+  <script src="js/register.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

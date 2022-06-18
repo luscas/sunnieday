@@ -11,12 +11,14 @@
 </head>
 
 <body class="auth">
-  <div class="sunlight"></div>
-
   <nav class="navbar">
     <div class="container">
       <div class="navbar__left">
-        <img class="navbar__menu" src="/images/menu.svg" alt="Menu">
+        <div class="navbar__menu">
+          <span></span>
+        </div>
+
+        <!-- <img class="navbar__menu" src="/images/menu.svg" alt="Menu"> -->
         <img class="navbar__search" src="/images/search.svg" alt="Search">
       </div>
 
@@ -25,8 +27,48 @@
       </a>
 
       <div class="navbar__right">
-        <button class="btn btn-info">Registreer nu</button>
-        <button class="btn btn-success">Log In</button>
+        <a href="/register.html">
+          <button class="btn btn-info">Registreer nu</button>
+        </a>
+        <button class="btn btn-success" disabled>Log In</button>
+      </div>
+    </div>
+
+    <div class="navbar-sub">
+      <div class="container">
+        <div class="navbar-sub__group">
+          <div class="navbar-sub__group--label">section</div>
+            <div class="navbar-sub__group--items">
+              <a href="#" class="navbar-sub__item">Item 1</a>
+              <a href="#" class="navbar-sub__item">Item 2</a>
+              <a href="#" class="navbar-sub__item">Item 3</a>
+          </div>
+        </div>
+
+        <div class="navbar-sub__group">
+          <div class="navbar-sub__group--label">section</div>
+            <div class="navbar-sub__group--items">
+              <a href="#" class="navbar-sub__item">Item 1</a>
+              <a href="#" class="navbar-sub__item">Item 2</a>
+              <a href="#" class="navbar-sub__item">Item 3</a>
+          </div>
+        </div>
+
+        <div class="navbar-sub__group">
+          <div class="navbar-sub__group--label">section</div>
+            <div class="navbar-sub__group--items">
+              <a href="#" class="navbar-sub__item">Item 1</a>
+              <a href="#" class="navbar-sub__item">Item 2</a>
+              <a href="#" class="navbar-sub__item">Item 3</a>
+          </div>
+        </div>
+
+        <div class="navbar-sub__group buttons">
+          <a href="/register.html">
+            <button class="btn btn-info">Registreer nu</button>
+          </a>
+          <button class="btn btn-success" disabled>Log In</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -76,7 +118,7 @@
 
             <div class="forgot-or-registration">
               <a href="#">Wachtwoord vergeten?</a><br>
-              <a href="#">Meld je GRATIS aan!</a>
+              <a href="register.html">Meld je GRATIS aan!</a>
             </div>
           </form>
         </div>

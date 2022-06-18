@@ -15,19 +15,21 @@
 		background: $orange;
 	}
 	&-lg {
+		font-size: 20px;
 		padding: 19px 64px 24px;
 	}
 	&:disabled {
 		background: $gray-400;
 		color: $gray-800;
 		box-shadow: none;
+		cursor: not-allowed;
+		&:hover {
+			background: $gray;
+		}
 	}
 	&-info {
 		background: $blue;
 		color: #fff;
-		&:hover {
-			background: $blue-600;
-		}
 	}
 	&-success {
 		background: $green;
@@ -62,7 +64,22 @@
   }
 }
 
-.form-control > input {
+.form-control.select {
+	&:after {
+		content: '';
+		background-image: url(/images/select_chevron.svg);
+		width: 12px;
+		height: 7px;
+		position: absolute;
+		top: 33px;
+		right: 20px;
+	}
+}
+.form-control select {
+	appearance: none;
+}
+.form-control > input,
+.form-control > select {
 	background-color: $gray;
 	font-family: $font-family;
 	font-weight: 500;
@@ -92,14 +109,27 @@
 	transition: all 150ms ease;
 }
 
-.form-control > input[aria-invalid] {
+.form-control > input[aria-invalid],
+.form-control > select[aria-invalid],
+input:not(:checked)[aria-invalid] ~ .gender__content {
 	border-color: $red!important;
 	color: red;
+	option {
+		color: black;
+	}
 }
 
 .form-control > input[aria-invalid],
 .form-control > input:focus,
 .form-control > input:valid {
+	background: #fff;
+	border-color: black;
+	padding: 24px 20px 16px 20px;
+}
+
+.form-control > select[aria-invalid],
+.form-control > select:focus,
+.form-control > select:valid {
 	background: #fff;
 	border-color: black;
 	padding: 24px 20px 16px 20px;
@@ -112,8 +142,69 @@
 	top: 8px;
 	left: 20px;
 }
+.form-control > select[aria-invalid] ~ label,
+.form-control > select:focus ~ label,
+.form-control > select:valid ~ label {
+	font-size: 14px;
+	top: 8px;
+	left: 20px;
+}
 .form-control > input[aria-invalid] ~ .eye,
 .form-control > input:focus ~ .eye,
 .form-control > input:valid ~ .eye {
   display: block;
+}
+
+.remember-me {
+	margin-top: 24px;
+	input[type="checkbox"] {
+		padding: 0;
+		height: initial;
+		width: initial;
+		margin-bottom: 0;
+		display: none;
+		cursor: pointer;
+	}
+	label {
+		position: relative;
+		cursor: pointer;
+		&:before {
+			content:'';
+			flex-shrink: 0;
+			-webkit-appearance: none;
+			background-color: #DDDDDD;
+			border: none;
+			border-radius: 4px;
+			width: 24px;
+			height: 24px;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			cursor: pointer;
+			margin-right: 5px;
+			transition: all 150ms ease-in-out;
+		}
+		span {
+			font-size: 16px;
+			font-weight: 500;
+			padding-left: 4px;
+			vertical-align: middle;
+		}
+	}
+	input:checked ~ label:before {
+		background: $orange;
+	}
+	input:checked + label:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 2px;
+		left: 8px;
+		width: 6px;
+		height: 14px;
+		border: solid white;
+		border-width: 0 2px 2px 0;
+		transform: rotate(45deg);
+	}
 }
