@@ -665,7 +665,7 @@ section#join-us {
 		display: flex;
 		color: #fff;
 		img {
-			max-width: fill-available;
+			max-width: 100%;
 			image-rendering: pixelated;
 		}
 		h2 {
@@ -981,6 +981,7 @@ a {
 			right: 0;
 			z-index: -1;
 			animation: sunlight 7s linear infinite;
+			pointer-events: none;
 		}
 	}
 	.container {
