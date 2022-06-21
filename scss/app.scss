@@ -8,6 +8,7 @@
 
 html, body {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 .navbar {
@@ -172,6 +173,9 @@ html, body {
 		gap: 12px;
 		align-items: center;
 		text-transform: uppercase;
+		img {
+			animation: down 1.5s infinite;
+		}
 		&:active, &:link, &:visited {
 			color: #fff;
 			text-decoration: none;
@@ -189,7 +193,7 @@ html, body {
 	right: 0;
 	margin: auto;
 	&--active {
-		height: 100%;
+		// height: 100%;
 		opacity: 1;
 		visibility: visible;
 		top: 0;
@@ -273,9 +277,18 @@ html, body {
 			}
 		}
 		.form-group {
-			grid-template-columns: 1fr;
+			flex-wrap: wrap;
+			flex-direction: column;
 			gap: 0px;
-			display: grid;
+			display: flex;
+			.form-control {
+				flex-grow: 1;
+			}
+			.form-control__error {
+				margin-top: -24px!important;
+				margin-bottom: 16px;
+				flex-grow: 1;
+			}
 		}
 	}
 	&[data-step="3"] {
@@ -331,9 +344,9 @@ html, body {
 			}
 		}
 		.form-group {
-			grid-template-columns: 1fr;
-			gap: 0px;
-			display: grid;
+			gap: 16px;
+			flex-direction: row!important;
+			display: flex;
 		}
 		.btn.btn-success.btn-lg {
 			width: 100%;
@@ -378,7 +391,6 @@ html, body {
 				height: 4px;
 				border-radius: 1px;
 				transition: all 250ms ease-in-out;
-				cursor: pointer;
 				&.completed {
 					background-color: $green;
 					height: 24px;
@@ -408,6 +420,7 @@ html, body {
 	}
 	#register {
 		.container {
+			height: auto;
 			box-sizing: border-box;
 			justify-content: space-between;
 			align-items: center;
@@ -520,6 +533,9 @@ html, body {
 		.gender {
 			flex-grow: 1;
 			position: relative;
+			span {
+				display: none;
+			}
 			&:hover {
 				.gender__content {
 					background-color: $gray-dark;
@@ -724,7 +740,6 @@ section#discord {
 	}
 }
 
-
 .container {
 	max-width: 100%;
 	margin: auto;
@@ -862,17 +877,12 @@ a {
 
 /* DESKTOP */
 @media (min-width: 1400px) {
-	#register {
-		.container {
-			height: 100vh!important;
-		}
-	}
 	.register {
 		&__left {
 			display: block;
 		}
-		.card {
-			padding: 56px 80px!important;
+		&__tab--active {
+			height: 100%!important;
 		}
 	}
 	.footer {
@@ -972,15 +982,14 @@ a {
 			background-image: url(/images/sunlight.svg);
 			background-repeat: no-repeat;
 			background-position: center top;
-			background-size: auto 960px;
-			width: 100%;
+			width: 100vw;
 			height: 960px;
-			position: fixed;
-			top: -50%;
+			position: absolute;
+			top: -480px;
 			left: 0;
 			right: 0;
 			z-index: -1;
-			animation: sunlight 7s linear infinite;
+			animation: sunlight 30s linear infinite;
 			pointer-events: none;
 		}
 	}
@@ -1012,21 +1021,36 @@ a {
 @media (min-width: 600px) {
 	#register {
 		.container {
+			height: 100vh!important;
 			padding-top: 0!important;
 			padding-bottom: 0!important;
 		}
 	}
 	.card {
+		padding: 56px 80px!important;
 		.socials {
+			justify-content: center;
 			flex-direction: row!important;
 		}
 	}
 	.register {
 		&[data-step="2"] {
 			.form-group {
+				flex-direction: row!important;
 				gap: 16px!important;
-				grid-template-columns: repeat(3, 1fr)!important;
+				.form-control {
+					width: calc(100% / 3 - (16 * 3) * 1px)!important;
+				}
 			}
+		}
+	}
+}
+
+/* MOBILE */
+@media (min-width: 480px) {
+	.gender {
+		span {
+			display: initial!important;
 		}
 	}
 }
@@ -1037,5 +1061,16 @@ a {
 	}
 	to {
 		transform: rotate(360deg);
+	}
+}
+@keyframes down {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translateY(7px);
+	}
+	40% {
+		transform: translate(0);
 	}
 }

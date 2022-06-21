@@ -16,12 +16,6 @@ document.querySelectorAll(".eye").forEach((el) => {
   });
 });
 
-document.querySelectorAll("[data-title]").forEach((el) => {
-  tippy(el, {
-    content: el.getAttribute("data-title"),
-  });
-});
-
 document.querySelector(".navbar__menu").addEventListener("click", (e) => {
   document.querySelector(".navbar").classList.toggle("navbar__sub--active");
 });

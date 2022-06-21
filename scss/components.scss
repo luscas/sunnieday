@@ -86,7 +86,7 @@
 	border-radius: 4px;
   width: 100%;
 	outline: none;
-	padding: 20px;
+	padding: 24px 16px 24px 16px;
 	border: 2px solid transparent;
 	font-size: 20px;
 	display: block;
@@ -98,7 +98,7 @@
 .form-control > label {
 	font-size: 18px;
 	position: absolute;
-	top: 24px;
+	top: 26px;
 	left: 24px;
 	z-index: 1;
 	pointer-events: none;
@@ -124,7 +124,7 @@ input:not(:checked)[aria-invalid] ~ .gender__content {
 .form-control > input:valid {
 	background: #fff;
 	border-color: black;
-	padding: 24px 20px 16px 20px;
+	padding: 32px 16px 16px 16px;
 }
 
 .form-control > select[aria-invalid],
@@ -132,22 +132,22 @@ input:not(:checked)[aria-invalid] ~ .gender__content {
 .form-control > select:valid {
 	background: #fff;
 	border-color: black;
-	padding: 24px 20px 16px 20px;
+	padding: 32px 16px 16px 16px;
 }
 
 .form-control > input[aria-invalid] ~ label,
 .form-control > input:focus ~ label,
 .form-control > input:valid ~ label {
 	font-size: 14px;
-	top: 8px;
-	left: 20px;
+	top: 10px;
+	left: 16px;
 }
 .form-control > select[aria-invalid] ~ label,
 .form-control > select:focus ~ label,
 .form-control > select:valid ~ label {
 	font-size: 14px;
-	top: 8px;
-	left: 20px;
+	top: 10px;
+	left: 16px;
 }
 .form-control > input[aria-invalid] ~ .eye,
 .form-control > input:focus ~ .eye,
